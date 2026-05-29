@@ -1,8 +1,4 @@
 ---
-/**
- * Services page
- * URL: /services
- */
 import PageLayout from '@/layouts/PageLayout.astro';
 import Icon from '@/components/ui/primitives/Icon/Icon.astro';
 import Badge from '@/components/ui/data-display/Badge/Badge.astro';
@@ -12,71 +8,68 @@ import { Hero } from '@/components/hero';
 import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
 ---
 <PageLayout
-  title="Services - Web Design, Development & Performance"
-  description="Three core services for modern websites: thoughtful design, clean Astro development, and measurable performance & SEO."
+  title="Services — Earned Media for B2B & Tech Brands — 701am"
+  description="Earned media services for B2B and tech brands: media pitching, thought leadership placement, and AI-search authority building."
 >
-  <Hero layout="centered" size="sm" class="isolate services-hero" showHeroHalo>
+  <Hero layout="centered" size="sm" class="isolate">
     <Badge slot="badge" variant="brand" pill>
       <Icon name="sparkles" size="sm" />
       Services
     </Badge>
     <h1 slot="title">
-      <span class="text-foreground">What I offer.</span><br />
-      <span class="text-brand-500">designed, built, and tuned.</span>
+      <span class="text-foreground">Earned media,</span><br />
+      <span class="text-brand-500">run like a system.</span>
     </h1>
 
     <p slot="description">
-      Three core services, one consistent standard. From the first
-      wireframe to the final Lighthouse score, every project gets the
-      same attention to detail.
+      Fixed-scope sprints. No retainer traps. Every engagement is designed to build
+      credibility, drive qualified traffic, and feed the AI signals that matter.
     </p>
 
     <Fragment slot="actions">
-      <Button size="lg" href="#design" variant="outline">
-        Web Design
+      <Button size="lg" href="#pitch" variant="outline">
+        Media Pitching
         <Icon name="arrow-down" size="sm" class="hero-jump-arrow" />
       </Button>
-      <Button size="lg" href="#development" variant="outline">
-        Development
+      <Button size="lg" href="#thought-leadership" variant="outline">
+        Thought Leadership
         <Icon name="arrow-down" size="sm" class="hero-jump-arrow" />
       </Button>
-      <Button size="lg" href="#performance" variant="outline">
-        Performance
+      <Button size="lg" href="#ai-authority" variant="outline">
+        AI Authority
         <Icon name="arrow-down" size="sm" class="hero-jump-arrow" />
       </Button>
     </Fragment>
   </Hero>
 
-  <!-- Design -->
-  <section id="design" class="py-[var(--space-section-md)] bg-background-secondary border-t border-border">
+  <!-- Media Pitching -->
+  <section id="pitch" class="py-[var(--space-section-md)] bg-background-secondary border-t border-border">
     <div class="mx-auto max-w-6xl px-6">
       <div class="grid gap-12 lg:grid-cols-2">
-        <!-- Text -->
         <div class="flex flex-col justify-center gap-4" data-reveal="right" data-reveal-ease="smooth">
           <Badge variant="brand" pill class="self-start">
-            <Icon name="layout" size="sm" />
-            Web Design
+            <Icon name="send" size="sm" />
+            Media Pitching
           </Badge>
           <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground text-balance">
-            Design with intention
+            Pitches that get opened and answered
           </h2>
           <p class="text-lg text-foreground-secondary leading-relaxed">
-            Great design starts with the people who'll use it. I design layouts shaped around your content and your audience, not around trends that age badly. Typography, spacing, and colour are chosen for clarity - not novelty.
+            I land your brand, your founders, and your expertise in the publications your buyers actually read. Not mass blasts — targeted, personalized outreach to the right journalists with newsworthy angles.
           </p>
           <p class="text-lg text-foreground-secondary leading-relaxed">
-            Every screen is considered: desktop, tablet, and the phone someone holds at the bus stop. The brand stays consistent across the whole experience, and the small details are treated as part of the design, not the polish.
+            Every pitch is built around what makes your story relevant right now. No fluff, no jargon, no "we think this would be a great fit" spray-and-pray.
           </p>
           <Button variant="outline" href="/contact" class="self-start mt-2">
-            Discuss a design project
+            Discuss a pitch sprint
             <Icon name="arrow-right" size="sm" />
           </Button>
         </div>
-        <!-- Card -->
         <div data-reveal="left" data-reveal-delay="1" data-reveal-ease="smooth">
           <Card variant="elevated" padding="lg" class="h-full flex flex-col justify-center">
             <div class="flex items-center gap-3 pb-4 mb-4 border-b border-border">
               <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 shrink-0">
-                <Icon name="layout" size="md" />
+                <Icon name="send" size="md" />
               </div>
               <h3 class="font-display text-base font-semibold text-foreground">What's included</h3>
             </div>
@@ -84,37 +77,25 @@ import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
               <li class="flex items-start gap-3">
                 <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
                 <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Bespoke layouts</span> — built for your content, not from a template. Every section earns its place by serving the page's goal.
+                  <span class="font-semibold text-foreground">Targeted journalist outreach</span> — every pitch goes to a specific reporter who covers your space, not a thousand-person spray list.
                 </p>
               </li>
               <li class="flex items-start gap-3">
                 <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
                 <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Responsive across breakpoints</span> — phone, tablet, desktop, ultrawide. Layouts reflow with intent, not just shrink to fit.
+                  <span class="font-semibold text-foreground">Newsworthy angle development</span> — we find the hook that makes your story timely, relevant, and worth covering.
                 </p>
               </li>
               <li class="flex items-start gap-3">
                 <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
                 <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Typography systems</span> — readable, scaleable, on-brand. A clear hierarchy from page title down to caption, tuned for long-form reading.
+                  <span class="font-semibold text-foreground">Placement tracking & reporting</span> — you get a clear report of every placement, link, and the authority signals built.
                 </p>
               </li>
               <li class="flex items-start gap-3">
                 <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
                 <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Light & dark themes</span> — one design, two moods, user's choice. Both modes are checked at every step, not retrofitted at the end.
-                </p>
-              </li>
-              <li class="flex items-start gap-3">
-                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
-                <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Considered motion</span> — interactions that guide, never distract. Reduced-motion preferences are respected without exception.
-                </p>
-              </li>
-              <li class="flex items-start gap-3">
-                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
-                <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Accessibility baked in</span> — contrast, focus, semantic structure. Keyboard paths and screen-reader output are verified before launch.
+                  <span class="font-semibold text-foreground">Follow-up sequences</span> — polite, persistent follow-ups that respect a journalist's inbox and deadline.
                 </p>
               </li>
             </ul>
@@ -124,36 +105,34 @@ import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
     </div>
   </section>
 
-  <!-- Development -->
-  <section id="development" class="py-[var(--space-section-md)] bg-background border-t border-border">
+  <!-- Thought Leadership -->
+  <section id="thought-leadership" class="py-[var(--space-section-md)] bg-background border-t border-border">
     <div class="mx-auto max-w-6xl px-6">
       <div class="grid gap-12 lg:grid-cols-2">
-        <!-- Text -->
         <div class="flex flex-col justify-center gap-4 lg:order-2" data-reveal="left" data-reveal-ease="smooth">
           <Badge variant="brand" pill class="self-start">
-            <Icon name="code" size="sm" />
-            Web Development
+            <Icon name="edit" size="sm" />
+            Thought Leadership
           </Badge>
           <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground text-balance">
-            Code that earns its place
+            Get your point of view in the room
           </h2>
           <p class="text-lg text-foreground-secondary leading-relaxed">
-            I build with Astro because it ships what's needed and nothing else. The result is sites that score well in audits, feel fast in the hand, and don't grow brittle over time.
+            The brands that get quoted are the ones with a clear point of view. I help you develop and place bylined articles, op-eds, and expert commentary in the outlets your market trusts.
           </p>
           <p class="text-lg text-foreground-secondary leading-relaxed">
-            Architecture matters as much as output: typed content, predictable component boundaries, and a build pipeline a future developer (or future you) can pick up without a guided tour.
+            From ghostwriting to placement strategy, every piece is positioned to build authority with both human readers and the AI engines that now summarize your category.
           </p>
-          <Button variant="outline" href="/projects" class="self-start mt-2">
-            See recent projects
+          <Button variant="outline" href="/contact" class="self-start mt-2">
+            Build your authority
             <Icon name="arrow-right" size="sm" />
           </Button>
         </div>
-        <!-- Card -->
         <div class="lg:order-1" data-reveal="right" data-reveal-delay="1" data-reveal-ease="smooth">
           <Card variant="elevated" padding="lg" class="h-full flex flex-col justify-center">
             <div class="flex items-center gap-3 pb-4 mb-4 border-b border-border">
               <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 shrink-0">
-                <Icon name="code" size="md" />
+                <Icon name="edit" size="md" />
               </div>
               <h3 class="font-display text-base font-semibold text-foreground">What's included</h3>
             </div>
@@ -161,37 +140,25 @@ import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
               <li class="flex items-start gap-3">
                 <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
                 <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Astro + Tailwind</span> — modern stack, minimal JavaScript, clean HTML. The browser renders the page almost instantly, with no hydration tax.
+                  <span class="font-semibold text-foreground">Bylined article placement</span> — op-eds, expert takes, and contributed pieces placed in tier-1 and trade publications.
                 </p>
               </li>
               <li class="flex items-start gap-3">
                 <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
                 <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Typed content collections</span> — structured blog, projects, and data. Schema validation runs at build time, so broken content never ships.
+                  <span class="font-semibold text-foreground">Ghostwriting & editing</span> — I write or refine every piece so it sounds like you, not a PR agency.
                 </p>
               </li>
               <li class="flex items-start gap-3">
                 <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
                 <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Forms & integrations</span> — protected, GDPR-aware, hooked into your tools. Submissions reach your inbox or CRM without leaking client-side.
+                  <span class="font-semibold text-foreground">Media training & messaging</span> — sharpen your story, your talking points, and your positioning before the interview.
                 </p>
               </li>
               <li class="flex items-start gap-3">
                 <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
                 <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Hosting & deploy</span> — Netlify, Vercel, Cloudflare, or your own infra. Preview deploys for every branch, so changes can be reviewed before they go live.
-                </p>
-              </li>
-              <li class="flex items-start gap-3">
-                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
-                <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Version control & CI</span> — git-based workflow, repeatable deploys. Automated checks gate every pull request before merge.
-                </p>
-              </li>
-              <li class="flex items-start gap-3">
-                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
-                <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Handover documentation</span> — code, keys, and a README you can actually read. Written so a future developer (or future you) can pick the project up without a tour.
+                  <span class="font-semibold text-foreground">Speaker & award nominations</span> — identify and submit for conference stages, panel spots, and industry awards that raise your profile.
                 </p>
               </li>
             </ul>
@@ -201,31 +168,29 @@ import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
     </div>
   </section>
 
-  <!-- Performance -->
-  <section id="performance" class="py-[var(--space-section-md)] bg-background-secondary border-t border-border">
+  <!-- AI Authority -->
+  <section id="ai-authority" class="py-[var(--space-section-md)] bg-background-secondary border-t border-border">
     <div class="mx-auto max-w-6xl px-6">
       <div class="grid gap-12 lg:grid-cols-2">
-        <!-- Text -->
         <div class="flex flex-col justify-center gap-4" data-reveal="right" data-reveal-ease="smooth">
           <Badge variant="brand" pill class="self-start">
             <Icon name="zap" size="sm" />
-            Performance
+            AI Authority
           </Badge>
           <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground text-balance">
-            Fast pages, found pages
+            Be the brand AI quotes
           </h2>
           <p class="text-lg text-foreground-secondary leading-relaxed">
-            Speed and search visibility aren't features to add at the end — they're constraints to honour from the first commit. Every second a page loads costs attention, ranking, and trust.
+            ChatGPT, Gemini, and Google's AI now answer your buyers' questions. The brands those engines name are the ones with real, third-party editorial coverage behind them — not the ones running the most ads.
           </p>
           <p class="text-lg text-foreground-secondary leading-relaxed">
-            I work to measurable targets, not vibes. Core Web Vitals, technical SEO, and accessibility are tracked, tuned, and verified before launch — and the dashboards stay yours after handover.
+            I build the earned-media foundation that AI engines use as their source of truth. Coverage that compounds — every new placement strengthens the authority signals that drive AI citations.
           </p>
           <Button variant="outline" href="/contact" class="self-start mt-2">
-            Start a project
+            Build AI authority
             <Icon name="arrow-right" size="sm" />
           </Button>
         </div>
-        <!-- Card -->
         <div data-reveal="left" data-reveal-delay="1" data-reveal-ease="smooth">
           <Card variant="elevated" padding="lg" class="h-full flex flex-col justify-center">
             <div class="flex items-center gap-3 pb-4 mb-4 border-b border-border">
@@ -238,37 +203,25 @@ import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
               <li class="flex items-start gap-3">
                 <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
                 <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Core Web Vitals</span> — LCP, INP, and CLS held to Google's thresholds. Measured on real devices, not just synthetic tests.
+                  <span class="font-semibold text-foreground">AI citation analysis</span> — audit what ChatGPT, Gemini, and Perplexity currently say about your category and where your brand stands.
                 </p>
               </li>
               <li class="flex items-start gap-3">
                 <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
                 <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Image pipeline</span> — modern formats, responsive sizes, lazy loading. Hero images art-directed so they look right on every screen.
+                  <span class="font-semibold text-foreground">Authority signal mapping</span> — identify the publications and backlink profiles that carry the most weight with AI training data.
                 </p>
               </li>
               <li class="flex items-start gap-3">
                 <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
                 <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Technical SEO</span> — metadata, sitemaps, structured data, OG images. All wired up and validated before the first crawl.
+                  <span class="font-semibold text-foreground">Earned coverage targeting</span> — place stories specifically in the outlets that AI engines trust and cite most frequently.
                 </p>
               </li>
               <li class="flex items-start gap-3">
                 <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
                 <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Accessibility</span> — WCAG-aware markup and verified focus order. Tested with a screen reader and the keyboard alone, not just a contrast checker.
-                </p>
-              </li>
-              <li class="flex items-start gap-3">
-                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
-                <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Lighthouse audits</span> — measurable scores delivered with the site. Repeatable in CI so they don't quietly drift after launch.
-                </p>
-              </li>
-              <li class="flex items-start gap-3">
-                <Icon name="check" size="sm" class="text-brand-500 shrink-0 mt-1" />
-                <p class="text-sm text-foreground-secondary leading-relaxed">
-                  <span class="font-semibold text-foreground">Privacy-friendly analytics</span> — useful data, no cookie banner. Self-hosted or vendor-anonymised, never sold on.
+                  <span class="font-semibold text-foreground">Quarterly authority reviews</span> — track how your brand's AI presence evolves and adjust strategy as the landscape shifts.
                 </p>
               </li>
             </ul>
@@ -278,18 +231,18 @@ import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
     </div>
   </section>
 
-  <!-- Process -->
+  <!-- Sprint Process -->
   <section class="py-[var(--space-section-md)] bg-background border-t border-border">
     <div class="mx-auto max-w-6xl px-6 flex flex-col gap-8">
       <div class="flex flex-col items-center gap-4 text-center" data-reveal>
         <div class="flex flex-col items-center gap-6">
           <Badge variant="brand" pill>How it works</Badge>
           <h2 class="font-display text-3xl md:text-4xl font-bold text-foreground text-balance">
-            A clear, honest process
+            The 30-day earned media sprint
           </h2>
         </div>
         <p class="text-lg text-foreground-secondary max-w-2xl mx-auto text-balance">
-          Four stages, one point of contact, no surprises.
+          Fixed scope. Fixed price. No retainer trap.
         </p>
       </div>
 
@@ -300,9 +253,9 @@ import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
               1
             </div>
             <div class="flex-1 min-w-0">
-              <h3 class="text-base font-semibold text-foreground text-balance">Discovery</h3>
+              <h3 class="text-base font-semibold text-foreground text-balance">Position</h3>
               <p class="text-sm text-foreground-secondary leading-relaxed mt-1.5">
-                A conversation about your goals, your audience, and what success looks like. No obligation.
+                We sharpen your story, angles, and the specific outlets and journalists worth pursuing. Built around what your buyers and the AI engines reward.
               </p>
             </div>
           </div>
@@ -313,9 +266,9 @@ import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
               2
             </div>
             <div class="flex-1 min-w-0">
-              <h3 class="text-base font-semibold text-foreground text-balance">Proposal</h3>
+              <h3 class="text-base font-semibold text-foreground text-balance">Pitch</h3>
               <p class="text-sm text-foreground-secondary leading-relaxed mt-1.5">
-                A clear scope, timeline, and cost. One page, plain language, fixed price.
+                Targeted, personalized outreach to the right journalists with newsworthy angles. No mass blasts. Pitches that actually get opened and answered.
               </p>
             </div>
           </div>
@@ -326,9 +279,9 @@ import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
               3
             </div>
             <div class="flex-1 min-w-0">
-              <h3 class="text-base font-semibold text-foreground text-balance">Design & Build</h3>
+              <h3 class="text-base font-semibold text-foreground text-balance">Place</h3>
               <p class="text-sm text-foreground-secondary leading-relaxed mt-1.5">
-                Short cycles with regular check-ins. You see the site evolve as it's built.
+                Coverage lands in target outlets. Every placement is tracked, measured, and reported so you know exactly what your money bought.
               </p>
             </div>
           </div>
@@ -339,9 +292,9 @@ import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
               4
             </div>
             <div class="flex-1 min-w-0">
-              <h3 class="text-base font-semibold text-foreground text-balance">Launch & Support</h3>
+              <h3 class="text-base font-semibold text-foreground text-balance">Report & Compound</h3>
               <p class="text-sm text-foreground-secondary leading-relaxed mt-1.5">
-                Deploy, hand over, stay available. Iteration after launch is straightforward.
+                A clear report of placements, reach, links, traffic, and authority signals. The data informs the next sprint — and the results compound.
               </p>
             </div>
           </div>
@@ -352,18 +305,17 @@ import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
 
   <!-- CTA -->
   <section class="relative z-10 py-[var(--space-section-md)] bg-background-secondary border-t border-border">
-    <!-- Mobile: flat section, no card -->
     <div class="glitch:hidden mx-auto max-w-2xl px-6 text-center" data-reveal>
       <Badge variant="brand" pill class="mb-6">Let's talk</Badge>
       <h2 class="font-display text-4xl font-bold text-foreground mb-4 text-balance">
-        Have a project in mind?
+        Ready to get covered?
       </h2>
       <p class="text-lg text-foreground-secondary mb-8 text-balance">
-        Send a short note about what you're building and what you need. I read every message and reply within a working day.
+        Book a 15-minute fit call. No pitch deck, no pressure — just a straight conversation about whether this is a fit.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <Button size="lg" href="/contact" class="cta-btn-brand">
-          Start a project
+          Book your fit call
           <Icon name="arrow-right" size="sm" />
         </Button>
         <Button size="lg" variant="outline" href="/about">
@@ -373,17 +325,16 @@ import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
       </div>
     </div>
 
-    <!-- Desktop: contained LetterGlitch band with glass card -->
     <LetterGlitchBand>
       <h2 class="font-display text-4xl font-bold text-foreground mb-4 text-balance">
-        Have a project in mind?
+        Ready to get covered?
       </h2>
       <p class="text-lg text-foreground-secondary mb-8 text-balance">
-        Send a short note about what you're building and what you need. I read every message and reply within a working day.
+        Book a 15-minute fit call. No pitch deck, no pressure — just a straight conversation about whether this is a fit.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <Button size="lg" href="/contact" class="hero-btn-brand">
-          Start a project
+          Book your fit call
           <Icon name="arrow-right" size="sm" />
         </Button>
         <Button size="lg" variant="outline" href="/about">
@@ -396,8 +347,6 @@ import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
 </PageLayout>
 
 <style is:global>
-  /* Gentle "scroll down" bounce on the hero jump-button arrows - same motion
-     language as the homepage hero scroll indicator. */
   .services-hero .hero-jump-arrow {
     animation: hero-jump-arrow-bounce 1.8s ease-in-out infinite;
   }
@@ -409,16 +358,10 @@ import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
     .services-hero .hero-jump-arrow { animation: none; }
   }
 
-  /* Page-local override: anchor links on /services should land the
-     section's coloured edge flush against the fixed header. */
   html { scroll-padding-top: 4rem; }
   @media (max-height: 600px) { html { scroll-padding-top: 4rem; } }
   @media (min-width: 1024px) { html { scroll-padding-top: 4rem; } }
 
-  /* In-page anchor jumps (the hero section buttons) tag their destination -
-     and everything above it - with .reveal-instant so the content is already
-     in its final position when the smooth-scroll lands, instead of sliding in
-     mid-jump. Natural scrolling is untouched and still animates. */
   .reveal-instant[data-reveal],
   .reveal-instant [data-reveal],
   .reveal-instant[data-reveal-children] > *,
@@ -430,11 +373,6 @@ import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
 </style>
 
 <script is:inline>
-  /* When a hero section button is clicked - or the page is opened directly on
-     one of those sections (e.g. /services#development) - the destination (and
-     everything the jump scrolls past) is snapped to its revealed state before
-     the scroll lands, so cards don't slide in mid-jump. Sections below the
-     target stay observed, so natural scrolling still animates normally. */
   (function () {
     function initServicesHeroJump() {
       const hero = document.querySelector('.services-hero');
