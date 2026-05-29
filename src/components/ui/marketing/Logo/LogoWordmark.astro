@@ -31,5 +31,10 @@ const textY = Math.round(height * 0.72);
   <text x={amX} y={amY}
     font-family="'Inter Variable', 'Inter', system-ui, sans-serif"
     font-weight="500" font-size={amFontSize}
-    fill="#38bdf8" letter-spacing="-0.01em">am</text>
+    class="logo-am" letter-spacing="-0.01em">am</text>
 </svg>
+
+<style is:global>
+  .logo-am { fill: var(--color-brand-500); }
+  .dark .logo-am { fill: var(--color-brand-400); }
+</style>

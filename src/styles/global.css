@@ -143,6 +143,9 @@
 
   /* Container */
   --container-max: 1200px;
+
+  /* Line heights - golden ratio override */
+  --leading-relaxed: 1.618;
 }
 
 /* -------------------------------------------------------------------------
