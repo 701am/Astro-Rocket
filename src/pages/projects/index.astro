@@ -27,7 +27,7 @@ const projects = items.sort((a, b) => a.data.order - b.data.order);
       Selected work
     </Badge>
 
-    <h1 slot="title">Projects</h1>
+    <h1 slot="title" class="text-balance">Projects</h1>
 
     <p slot="description" class="max-w-2xl mx-auto">
       For 20 years I've worked at the intersection of SEO, earned media, and project management — across higher education, edtech, startups, and finance. The throughline is simple: build things worth citing, then run the systems that turn that credibility into durable, compounding growth. Coverage and authority aren't a campaign you finish; they're an engine you operate.
@@ -56,15 +56,15 @@ const projects = items.sort((a, b) => a.data.order - b.data.order);
                   <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 shrink-0">
                     <Icon name="layers" size="sm" />
                   </div>
-                  <Icon name="arrow-up-right" size="sm" class="text-foreground-muted group-hover:text-brand-500 transition-colors shrink-0 ml-auto" />
+                  <Icon name="arrow-up-right" size="sm" class="text-foreground-secondary group-hover:text-brand-500 transition-colors shrink-0 ml-auto" />
                 </div>
                 <div class="mb-2 flex items-baseline gap-2">
-                  <h3 class="font-display text-lg font-bold text-foreground">{project.data.title}</h3>
+                  <h3 class="font-display text-lg font-bold text-foreground text-balance">{project.data.title}</h3>
                   {project.data.year && (
-                    <span class="text-xs text-foreground-muted">{project.data.year}</span>
+                    <span class="text-xs text-foreground-secondary">{project.data.year}</span>
                   )}
                 </div>
-                <p class="text-sm text-foreground-muted leading-relaxed mb-4 flex-1">{project.data.description}</p>
+                <p class="text-sm text-foreground-secondary leading-relaxed mb-4 flex-1">{project.data.description}</p>
                 {project.data.tags && project.data.tags.length > 0 && (
                   <div class="flex flex-wrap gap-1.5">
                     {project.data.tags.map((tag) => (
@@ -88,7 +88,7 @@ const projects = items.sort((a, b) => a.data.order - b.data.order);
       <h2 class="font-display text-4xl font-bold text-foreground mb-4 text-balance">
         Want something like this?
       </h2>
-      <p class="text-lg text-foreground-muted mb-8 text-balance">
+      <p class="text-lg text-foreground-secondary mb-8 text-balance">
         I build with the same care and craft you see here. If you've got a project, let's see what we can make together.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -108,7 +108,7 @@ const projects = items.sort((a, b) => a.data.order - b.data.order);
       <h2 class="font-display text-4xl font-bold text-foreground mb-4 text-balance">
         Want something like this?
       </h2>
-      <p class="text-lg text-foreground-muted mb-8 text-balance">
+      <p class="text-lg text-foreground-secondary mb-8 text-balance">
         I build with the same care and craft you see here. If you've got a project, let's see what we can make together.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">

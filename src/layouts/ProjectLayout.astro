@@ -163,7 +163,7 @@ const breadcrumbs = [
     {related.length > 0 && (
       <section class="py-[var(--space-section-md)] bg-background-secondary border-t border-border" data-reveal>
         <div class="mx-auto max-w-7xl px-6">
-          <h2 class="font-display text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">More projects</h2>
+          <h2 class="font-display text-2xl md:text-3xl font-bold text-foreground mb-8 text-center text-balance">More projects</h2>
           <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((project) => (
               <Card
@@ -178,15 +178,15 @@ const breadcrumbs = [
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 shrink-0">
                       <Icon name="layers" size="sm" />
                     </div>
-                    <Icon name="arrow-up-right" size="sm" class="text-foreground-muted group-hover:text-brand-500 transition-colors shrink-0 ml-auto" />
+                    <Icon name="arrow-up-right" size="sm" class="text-foreground-secondary group-hover:text-brand-500 transition-colors shrink-0 ml-auto" />
                   </div>
                   <div class="mb-2 flex items-baseline gap-2">
-                    <h3 class="font-display text-lg font-bold text-foreground">{project.data.title}</h3>
+                    <h3 class="font-display text-lg font-bold text-foreground text-balance">{project.data.title}</h3>
                     {project.data.year && (
-                      <span class="text-xs text-foreground-muted">{project.data.year}</span>
+                      <span class="text-xs text-foreground-secondary">{project.data.year}</span>
                     )}
                   </div>
-                  <p class="text-sm text-foreground-muted leading-relaxed mb-4 flex-1 line-clamp-3">{project.data.description}</p>
+                  <p class="text-sm text-foreground-secondary leading-relaxed mb-4 flex-1 line-clamp-3">{project.data.description}</p>
                   {project.data.tags && project.data.tags.length > 0 && (
                     <div class="flex flex-wrap gap-1.5">
                       {project.data.tags.map((tag, i) => (
@@ -213,7 +213,7 @@ const breadcrumbs = [
         <h2 class="font-display text-4xl font-bold text-foreground mb-4 text-balance">
           Have a project in mind?
         </h2>
-        <p class="text-lg text-foreground-muted mb-8 text-balance">
+        <p class="text-lg text-foreground-secondary mb-8 text-balance">
           Whether it's a new build or something that needs a fresh perspective — I'd love to hear about it.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -233,7 +233,7 @@ const breadcrumbs = [
         <h2 class="font-display text-4xl font-bold text-foreground mb-4 text-balance">
           Have a project in mind?
         </h2>
-        <p class="text-lg text-foreground-muted mb-8 text-balance">
+        <p class="text-lg text-foreground-secondary mb-8 text-balance">
           Whether it's a new build or something that needs a fresh perspective — I'd love to hear about it.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">

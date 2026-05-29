@@ -143,8 +143,8 @@ const gridClasses = cn(
       {/* Description Slot */}
       {hasDescriptionSlot && (
         <div class={cn(
-          'mb-[var(--space-stack-lg)] max-w-xl text-lg leading-relaxed text-foreground-muted',
-          '[&>p]:text-lg [&>p]:leading-relaxed [&>p]:text-foreground-muted',
+          'mb-[var(--space-stack-lg)] max-w-xl text-lg leading-relaxed text-foreground-secondary',
+          '[&>p]:text-lg [&>p]:leading-relaxed [&>p]:text-foreground-secondary',
           layout === 'centered' && 'mx-auto'
         )}>
           <slot name="description" />
