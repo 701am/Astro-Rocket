@@ -8,8 +8,9 @@ import Icon from '@/components/ui/primitives/Icon/Icon.astro';
 import BlogCard from '@/components/blog/BlogCard.astro';
 import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
 import Accordion from '@/components/ui/overlay/Accordion/Accordion.astro';
+import HeroGrid from '@/components/effects/HeroGrid.astro';
+import HeroBeam from '@/components/effects/HeroBeam.astro';
 import { getCollection } from 'astro:content';
-import siteConfig from '@/config/site.config';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => {
@@ -27,301 +28,352 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   includeProfessionalServiceSchema={true}
 >
   <!-- Hero -->
-  <Hero layout="centered" size="xl" class="hero-dark-gradient" showScrollIndicator fullHeight>
-    <Badge slot="badge" variant="brand" pill pulse class="dark:text-brand-200">Earned media for B2B & tech</Badge>
+  <Hero layout="centered" size="xl" class="relative isolate overflow-hidden hero-dark-gradient" showScrollIndicator fullHeight>
+    <HeroGrid />
+    <HeroBeam />
+    <div class="relative z-10">
+      <Badge slot="badge" variant="brand" pill pulse class="dark:text-brand-200 mb-6">Earned media for B2B and tech</Badge>
 
-    <h1 slot="title" class="font-display font-semibold leading-[1.08] tracking-tight max-w-5xl mx-auto text-[clamp(2rem,6vw,3.815rem)]">
-      <span class="text-foreground [-webkit-text-fill-color:currentColor]">When buyers and AI look for the best in your category, do they find you?</span>
-    </h1>
+      <h1 slot="title" class="font-display font-semibold leading-[1.06] tracking-tight max-w-5xl mx-auto">
+        <span class="text-[clamp(2rem,6vw,3.815rem)] block text-foreground [-webkit-text-fill-color:currentColor]">When buyers and AI look for the best</span>
+        <span class="text-[clamp(2rem,6vw,3.815rem)] block text-foreground [-webkit-text-fill-color:currentColor]">in your category, do they find you?</span>
+      </h1>
 
-    <p slot="description" class="max-w-3xl mx-auto text-balance text-lg leading-relaxed">
-      I get B2B and tech brands into the credible publications your customers trust and the AI engines now quote. Earned coverage that builds authority, drives qualified traffic, and shows up where ads cannot reach.
-    </p>
+      <p slot="description" class="max-w-3xl mx-auto text-balance text-lg leading-relaxed mt-6" style="line-height: 1.618">
+        I get B2B and tech brands into the credible publications your customers trust
+        and the AI engines now quote. Earned coverage that builds authority, drives
+        qualified traffic, and shows up where ads cannot reach.
+      </p>
 
-   <Fragment slot="actions">
-      <Button size="lg" href="/contact">
-        Book a 15-minute fit call
-        <Icon name="arrow-right" size="sm" />
-      </Button>
-      <Button size="lg" variant="outline" href="#sprint">
-        See how the sprint works
-        <Icon name="arrow-down" size="sm" />
-      </Button>
-    </Fragment>
+     <Fragment slot="actions">
+        <Button size="lg" href="/contact">
+          Book a 15-minute fit call
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+        <Button size="lg" variant="outline" href="#sprint">
+          See how the sprint works
+          <Icon name="arrow-down" size="sm" />
+        </Button>
+      </Fragment>
+    </div>
   </Hero>
 
   <!-- The Shift -->
-  <section class="relative z-10 py-24 md:py-32 bg-background-secondary border-t border-border">
+  <section class="relative z-10 py-28 md:py-40 bg-background-secondary">
+    <div class="absolute inset-0 bg-grid opacity-[0.03] pointer-events-none" />
     <div class="mx-auto max-w-4xl px-6 flex flex-col gap-8" data-reveal>
       <Badge variant="brand" pill class="self-start">The shift</Badge>
-      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-foreground">
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight text-foreground max-w-3xl">
         Search changed. Most brands have not noticed yet.
       </h2>
-      <div class="text-lg text-foreground-muted leading-relaxed space-y-5 max-w-3xl" style="line-height: 1.618">
-        <p>
-          Your buyers do not scroll ten blue links anymore. They ask ChatGPT, Gemini, and Google's AI for a recommendation. The brands those engines name are the ones with real, third-party editorial coverage behind them. Not the ones running the most ads.
+      <div class="space-y-6 max-w-3xl">
+        <p class="text-lg text-foreground-muted leading-relaxed" style="line-height: 1.618">
+          Your buyers do not scroll ten blue links anymore. They ask ChatGPT, Gemini,
+          and Google's AI for a recommendation. The brands those engines name are the
+          ones with real, third-party editorial coverage behind them. Not the ones
+          running the most ads.
         </p>
-        <p>
-          That is the quiet shift almost no marketing team has connected: <strong class="text-foreground font-medium">earned media has become the input AI trusts most</strong>. The brands investing in it now are building a moat that paid budgets cannot buy back later.
+        <div class="relative pl-8 border-l-2 border-brand-500/40">
+          <p class="text-xl text-foreground font-display italic leading-relaxed" style="line-height: 1.618">
+            "That is the quiet shift almost no marketing team has connected: earned
+            media has become the input AI trusts most."
+          </p>
+        </div>
+        <p class="text-lg text-foreground-muted leading-relaxed" style="line-height: 1.618">
+          The brands investing in it now are building a moat that paid budgets cannot buy back later.
         </p>
       </div>
     </div>
   </section>
 
   <!-- What I Do -->
-  <section class="relative z-10 py-24 md:py-32 bg-background border-t border-border">
-    <div class="mx-auto max-w-6xl px-6 flex flex-col gap-12">
-      <div class="flex flex-col gap-5 max-w-3xl" data-reveal>
+  <section class="relative z-10 py-28 md:py-40 bg-background">
+    <div class="mx-auto max-w-6xl px-6 flex flex-col gap-16">
+      <div class="flex flex-col gap-6 max-w-3xl" data-reveal>
         <Badge variant="brand" pill class="self-start">What I do</Badge>
-        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-foreground">
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight text-foreground">
           Earned media, run like a system.
         </h2>
-        <p class="text-lg text-foreground-muted leading-relaxed" style="line-height: 1.618">
-          I land your brand, your founders, and your point of view in publications your buyers and your market actually read. Every placement is chosen to do three things at once.
+        <p class="text-lg text-foreground-muted leading-relaxed max-w-2xl" style="line-height: 1.618">
+          I land your brand, your founders, and your point of view in publications
+          your buyers and your market actually read. Every placement is chosen to
+          do three things at once.
         </p>
       </div>
 
-      <div class="grid gap-8 md:grid-cols-3">
-        <Card hover class="group flex flex-col p-8" data-reveal>
-          <div class="flex flex-col gap-5">
-            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 shrink-0">
-              <Icon name="badge-check" size="md" />
+      <div class="grid gap-8 md:grid-cols-3" data-reveal-children>
+        <div class="group relative bg-card border border-card-border rounded-2xl p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-brand-500/30">
+          <div class="flex flex-col gap-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500">
+              <Icon name="badge-check" size="lg" />
             </div>
             <div>
-              <h3 class="font-display text-2xl font-semibold text-foreground mb-2">Build credibility</h3>
+              <h3 class="font-display text-2xl font-semibold text-foreground mb-3">Build credibility</h3>
               <p class="text-base text-foreground-muted leading-relaxed" style="line-height: 1.618">
                 Through trusted, third-party voices that your buyers already read and respect.
               </p>
             </div>
           </div>
-        </Card>
-        <Card hover class="group flex flex-col p-8" data-reveal data-reveal-delay="1">
-          <div class="flex flex-col gap-5">
-            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 shrink-0">
-              <Icon name="trending-up" size="md" />
+        </div>
+        <div class="group relative bg-card border border-card-border rounded-2xl p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-brand-500/30">
+          <div class="flex flex-col gap-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500">
+              <Icon name="trending-up" size="lg" />
             </div>
             <div>
-              <h3 class="font-display text-2xl font-semibold text-foreground mb-2">Drive qualified traffic</h3>
+              <h3 class="font-display text-2xl font-semibold text-foreground mb-3">Drive qualified traffic</h3>
               <p class="text-base text-foreground-muted leading-relaxed" style="line-height: 1.618">
                 Referral traffic that converts better than paid. Readers arrive with trust already built in.
               </p>
             </div>
           </div>
-        </Card>
-        <Card hover class="group flex flex-col p-8" data-reveal data-reveal-delay="2">
-          <div class="flex flex-col gap-5">
-            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500 shrink-0">
-              <Icon name="zap" size="md" />
+        </div>
+        <div class="group relative bg-card border border-card-border rounded-2xl p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-brand-500/30">
+          <div class="flex flex-col gap-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center text-brand-500">
+              <Icon name="zap" size="lg" />
             </div>
             <div>
-              <h3 class="font-display text-2xl font-semibold text-foreground mb-2">Feed AI authority</h3>
+              <h3 class="font-display text-2xl font-semibold text-foreground mb-3">Feed AI authority</h3>
               <p class="text-base text-foreground-muted leading-relaxed" style="line-height: 1.618">
                 The authority signals that AI engines and search use to decide who gets named in answers.
               </p>
             </div>
           </div>
-        </Card>
+        </div>
       </div>
 
-      <p class="text-sm text-foreground-muted max-w-2xl" data-reveal>
-        No vanity impressions. No "we sent 200 pitches." Coverage you can point to, measure, and compound.
+      <p class="text-sm text-foreground-muted text-center max-w-xl mx-auto" data-reveal>
+        No vanity impressions. No "we sent 200 pitches." Coverage you can point to,
+        measure, and compound.
       </p>
     </div>
   </section>
 
-  <!-- Why Earned Media Outperforms -->
-  <section class="relative z-10 py-24 md:py-32 bg-background-secondary border-t border-border">
-    <div class="mx-auto max-w-6xl px-6 flex flex-col gap-12">
-      <div class="flex flex-col gap-5 text-center items-center" data-reveal>
+  <!-- Stats -->
+  <section class="relative z-10 py-28 md:py-40 bg-background-secondary overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-500/[0.02] to-transparent pointer-events-none" />
+    <div class="mx-auto max-w-6xl px-6 flex flex-col gap-16">
+      <div class="flex flex-col gap-6 text-center items-center" data-reveal>
         <Badge variant="brand" pill>The numbers</Badge>
-        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-foreground">
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight text-foreground max-w-3xl">
           Why earned media outperforms
         </h2>
+        <p class="text-lg text-foreground-muted max-w-2xl leading-relaxed" style="line-height: 1.618">
+          The data is clear. Earned media drives trust, traffic, and revenue in ways
+          paid channels simply cannot match.
+        </p>
       </div>
 
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <Card variant="elevated" padding="lg" class="p-8" data-reveal>
-          <p class="text-5xl font-semibold text-brand-500 font-display mb-3">92%</p>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-reveal-children>
+        <div class="relative bg-card border border-card-border rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-lg">
+          <div class="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-brand-500/60 to-transparent rounded-full" />
+          <p class="text-5xl md:text-6xl font-semibold text-brand-500 font-display mb-3">92%</p>
           <p class="text-sm text-foreground-muted leading-relaxed" style="line-height: 1.618">
             of consumers trust earned media above every other form of advertising.
           </p>
-          <p class="text-xs text-foreground-subtle mt-4">Nielsen Global Trust in Advertising</p>
-        </Card>
-        <Card variant="elevated" padding="lg" class="p-8" data-reveal data-reveal-delay="1">
-          <p class="text-5xl font-semibold text-brand-500 font-display mb-3">4.7x</p>
+          <p class="text-xs text-foreground-subtle mt-4">Nielsen</p>
+        </div>
+        <div class="relative bg-card border border-card-border rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-lg">
+          <div class="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-brand-500/60 to-transparent rounded-full" />
+          <p class="text-5xl md:text-6xl font-semibold text-brand-500 font-display mb-3">4.7x</p>
           <p class="text-sm text-foreground-muted leading-relaxed" style="line-height: 1.618">
             the ROI of paid advertising from earned editorial placements.
           </p>
-          <p class="text-xs text-foreground-subtle mt-4">Baden Bower analysis, 2025-26</p>
-        </Card>
-        <Card variant="elevated" padding="lg" class="p-8" data-reveal data-reveal-delay="2">
-          <p class="text-5xl font-semibold text-brand-500 font-display mb-3">3x</p>
+          <p class="text-xs text-foreground-subtle mt-4">Baden Bower</p>
+        </div>
+        <div class="relative bg-card border border-card-border rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-lg">
+          <div class="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-brand-500/60 to-transparent rounded-full" />
+          <p class="text-5xl md:text-6xl font-semibold text-brand-500 font-display mb-3">3x</p>
           <p class="text-sm text-foreground-muted leading-relaxed" style="line-height: 1.618">
-            better lead conversion from PR-driven organic traffic vs. paid traffic.
+            better lead conversion from PR-driven traffic vs. paid traffic.
           </p>
-          <p class="text-xs text-foreground-subtle mt-4">Avaans Media, 2025</p>
-        </Card>
-        <Card variant="elevated" padding="lg" class="p-8" data-reveal data-reveal-delay="3">
-          <p class="text-5xl font-semibold text-brand-500 font-display mb-3">20%</p>
+          <p class="text-xs text-foreground-subtle mt-4">Avaans Media</p>
+        </div>
+        <div class="relative bg-card border border-card-border rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-lg">
+          <div class="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-brand-500/60 to-transparent rounded-full" />
+          <p class="text-5xl md:text-6xl font-semibold text-brand-500 font-display mb-3">20%</p>
           <p class="text-sm text-foreground-muted leading-relaxed" style="line-height: 1.618">
             higher revenue growth over three years for companies that integrate PR.
           </p>
-          <p class="text-xs text-foreground-subtle mt-4">Avaans Media, 2025</p>
-        </Card>
-        <Card variant="elevated" padding="lg" class="p-8" data-reveal data-reveal-delay="4">
-          <p class="text-5xl font-semibold text-brand-500 font-display mb-3">$1k-2.5k+</p>
+          <p class="text-xs text-foreground-subtle mt-4">Avaans Media</p>
+        </div>
+        <div class="relative bg-card border border-card-border rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-lg">
+          <div class="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-brand-500/60 to-transparent rounded-full" />
+          <p class="text-5xl md:text-6xl font-semibold text-brand-500 font-display mb-3">$1k-2.5k+</p>
           <p class="text-sm text-foreground-muted leading-relaxed" style="line-height: 1.618">
-            what a single tier-1 editorial backlink would cost to acquire through link building.
+            what a tier-1 editorial backlink costs to acquire. If you can buy it at all.
           </p>
-          <p class="text-xs text-foreground-subtle mt-4">Most top publications do not sell placements</p>
-        </Card>
-        <Card variant="elevated" padding="lg" class="p-8" data-reveal data-reveal-delay="5">
-          <p class="text-5xl font-semibold text-brand-500 font-display mb-3">79% / 30%</p>
+          <p class="text-xs text-foreground-subtle mt-4">Industry benchmark</p>
+        </div>
+        <div class="relative bg-card border border-card-border rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-lg">
+          <div class="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-brand-500/60 to-transparent rounded-full" />
+          <p class="text-5xl md:text-6xl font-semibold text-brand-500 font-display mb-3">79% / 30%</p>
           <p class="text-sm text-foreground-muted leading-relaxed" style="line-height: 1.618">
-            of executives believe PR drives real business value, but only 30% feel they measure it well. I close that gap.
+            of execs say PR drives value. Only 30% measure it well. I close that gap.
           </p>
-          <p class="text-xs text-foreground-subtle mt-4">Every engagement is tracked and reported</p>
-        </Card>
+          <p class="text-xs text-foreground-subtle mt-4">Every engagement tracked</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- The Sprint -->
-  <section id="sprint" class="relative z-10 py-24 md:py-32 bg-background border-t border-border">
-    <div class="mx-auto max-w-6xl px-6 flex flex-col gap-12">
-      <div class="flex flex-col gap-5 max-w-3xl" data-reveal>
+  <section id="sprint" class="relative z-10 py-28 md:py-40 bg-background">
+    <div class="mx-auto max-w-6xl px-6 flex flex-col gap-16">
+      <div class="flex flex-col gap-6 max-w-3xl" data-reveal>
         <Badge variant="brand" pill class="self-start">How it works</Badge>
-        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-foreground">
-          A 30-day earned media sprint. Fixed scope. No retainer trap.
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight text-foreground">
+          A 30-day earned media sprint.
         </h2>
-        <p class="text-lg text-foreground-muted leading-relaxed" style="line-height: 1.618">
-          You should not have to sign a six-month retainer to find out if this works. Start with one sprint. Expand when the results make the case for you.
+        <p class="text-lg text-foreground-muted max-w-2xl leading-relaxed" style="line-height: 1.618">
+          Fixed scope. No retainer trap. You should not have to sign a six-month
+          retainer to find out if this works. Start with one sprint. Expand when
+          the results make the case for you.
         </p>
       </div>
 
-      <div class="grid gap-8 md:grid-cols-3">
-        <Card variant="elevated" padding="lg" class="relative p-8 pt-12" data-reveal>
-          <div class="absolute -top-4 left-6 w-9 h-9 rounded-full bg-brand-500 flex items-center justify-center text-white font-semibold text-base font-display">1</div>
-          <div>
+      <div class="grid gap-8 md:grid-cols-3 relative" data-reveal-children>
+        <div class="hidden md:block absolute top-12 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-0.5 bg-gradient-to-r from-brand-500/20 via-brand-500/40 to-brand-500/20" />
+        <div class="relative bg-card border border-card-border rounded-2xl p-10 transition-all duration-300 hover:shadow-lg">
+          <div class="absolute -top-5 left-10 w-10 h-10 rounded-full bg-brand-500 flex items-center justify-center text-white font-semibold text-lg font-display shadow-lg shadow-brand-500/25">1</div>
+          <div class="mt-4">
             <Badge variant="brand" pill class="mb-4">Days 1-5</Badge>
             <h3 class="font-display text-2xl font-semibold text-foreground mb-3">Position</h3>
             <p class="text-sm text-foreground-muted leading-relaxed" style="line-height: 1.618">
-              We sharpen your story, angles, and the specific outlets and journalists worth pursuing. Built around what your buyers and the AI engines reward.
+              We sharpen your story, angles, and the specific outlets and journalists
+              worth pursuing. Built around what your buyers and the AI engines reward.
             </p>
           </div>
-        </Card>
-        <Card variant="elevated" padding="lg" class="relative p-8 pt-12" data-reveal data-reveal-delay="1">
-          <div class="absolute -top-4 left-6 w-9 h-9 rounded-full bg-brand-500 flex items-center justify-center text-white font-semibold text-base font-display">2</div>
-          <div>
+        </div>
+        <div class="relative bg-card border border-card-border rounded-2xl p-10 transition-all duration-300 hover:shadow-lg">
+          <div class="absolute -top-5 left-10 w-10 h-10 rounded-full bg-brand-500 flex items-center justify-center text-white font-semibold text-lg font-display shadow-lg shadow-brand-500/25">2</div>
+          <div class="mt-4">
             <Badge variant="brand" pill class="mb-4">Days 6-25</Badge>
             <h3 class="font-display text-2xl font-semibold text-foreground mb-3">Pitch</h3>
             <p class="text-sm text-foreground-muted leading-relaxed" style="line-height: 1.618">
-              Targeted, personalized outreach to the right journalists with newsworthy angles. No mass blasts. The kind of pitches that actually get opened and answered.
+              Targeted, personalized outreach to the right journalists with newsworthy
+              angles. No mass blasts. Pitches that actually get opened and answered.
             </p>
           </div>
-        </Card>
-        <Card variant="elevated" padding="lg" class="relative p-8 pt-12" data-reveal data-reveal-delay="2">
-          <div class="absolute -top-4 left-6 w-9 h-9 rounded-full bg-brand-500 flex items-center justify-center text-white font-semibold text-base font-display">3</div>
-          <div>
+        </div>
+        <div class="relative bg-card border border-card-border rounded-2xl p-10 transition-all duration-300 hover:shadow-lg">
+          <div class="absolute -top-5 left-10 w-10 h-10 rounded-full bg-brand-500 flex items-center justify-center text-white font-semibold text-lg font-display shadow-lg shadow-brand-500/25">3</div>
+          <div class="mt-4">
             <Badge variant="brand" pill class="mb-4">Days 26-30</Badge>
-            <h3 class="font-display text-2xl font-semibold text-foreground mb-3">Place & Report</h3>
+            <h3 class="font-display text-2xl font-semibold text-foreground mb-3">Place and Report</h3>
             <p class="text-sm text-foreground-muted leading-relaxed" style="line-height: 1.618">
-              Coverage lands. You get a clear report: placements, reach, links, traffic, and the authority signals built. You will know exactly what your money bought.
+              Coverage lands. You get a clear report: placements, reach, links, traffic,
+              and the authority signals built. You will know exactly what your money bought.
             </p>
           </div>
-        </Card>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Who It's For -->
-  <section class="relative z-10 py-24 md:py-32 bg-background-secondary border-t border-border">
+  <section class="relative z-10 py-28 md:py-40 bg-background-secondary">
     <div class="mx-auto max-w-4xl px-6 flex flex-col gap-8" data-reveal>
       <Badge variant="brand" pill class="self-start">Who it is for</Badge>
-      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-foreground">
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight text-foreground max-w-3xl">
         Built for brands where trust is the whole game.
       </h2>
-      <div class="text-lg text-foreground-muted leading-relaxed" style="line-height: 1.618">
-        <p class="mb-5">
-          This works best for <strong class="text-foreground font-medium">B2B tech and SaaS, healthcare and health tech, fintech and financial services, education and edtech</strong>, and founder-led companies that need authority more than they need another ad campaign.
-        </p>
+      <div class="text-lg text-foreground-muted leading-relaxed max-w-3xl space-y-6" style="line-height: 1.618">
         <p>
-          If your category runs on credibility, and especially if paid channels are restricted or saturated, earned media is not a nice-to-have. It is the channel.
+          This works best for <strong class="text-foreground font-medium">B2B tech and SaaS, healthcare and health tech,
+          fintech and financial services, education and edtech</strong>, and founder-led
+          companies that need authority more than they need another ad campaign.
         </p>
+        <div class="relative pl-8 border-l-2 border-brand-500/40">
+          <p class="text-xl text-foreground font-display italic leading-relaxed" style="line-height: 1.618">
+            "If your category runs on credibility, earned media is not a nice-to-have.
+            It is the channel."
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Proof / Placements -->
-  <section class="relative z-10 py-24 md:py-32 bg-background border-t border-border">
-    <div class="mx-auto max-w-4xl px-6 flex flex-col gap-8 text-center items-center" data-reveal>
+  <!-- Placements -->
+  <section class="relative z-10 py-28 md:py-40 bg-background text-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-500/[0.02] via-transparent to-brand-500/[0.02] pointer-events-none" />
+    <div class="mx-auto max-w-4xl px-6 flex flex-col gap-8 items-center" data-reveal>
       <Badge variant="brand" pill>Placements</Badge>
-      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-foreground">
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight text-foreground max-w-3xl">
         Coverage that moves the needle.
       </h2>
       <p class="text-lg text-foreground-muted max-w-2xl leading-relaxed" style="line-height: 1.618">
-        A decade of getting brands and founders covered. From national outlets to the tier-1 trade press your specific buyers live in.
+        A decade of getting brands and founders covered. From national outlets to
+        the tier-1 trade press your specific buyers rely on.
       </p>
-      <Button variant="outline" href="/contact">
-        Let's talk about your story
+      <Button variant="outline" href="/contact" class="mt-4">
+        Let us talk about your story
         <Icon name="arrow-right" size="sm" />
       </Button>
     </div>
   </section>
 
   <!-- About Teaser -->
-  <section class="relative z-10 py-24 md:py-32 bg-background-secondary border-t border-border">
+  <section class="relative z-10 py-28 md:py-40 bg-background-secondary">
     <div class="mx-auto max-w-6xl px-6">
       <div class="grid gap-16 lg:grid-cols-2 items-center">
         <div class="flex flex-col justify-center" data-reveal="right" data-reveal-ease="smooth">
           <div class="flex flex-col gap-6 mb-8">
             <Badge variant="brand" pill class="self-start">About</Badge>
-            <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-foreground">
-              Who you're working with.
+            <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight text-foreground">
+              Who you are working with.
             </h2>
           </div>
           <p class="text-lg text-foreground-muted leading-relaxed mb-4" style="line-height: 1.618">
-            I'm David Krug. For over a decade I have built earned-media systems and digital platforms as a founder and operator. Not a junior account exec you will never speak to.
+            I am David Krug. For over a decade I have built earned-media systems
+            and digital platforms as a founder and operator. Not a junior account
+            exec you will never speak to.
           </p>
           <p class="text-lg text-foreground-muted leading-relaxed mb-10" style="line-height: 1.618">
-            When you hire me, you get the person who does the work, the strategy, and the pitching. That is the difference between an agency line item and an actual edge.
+            When you hire me, you get the person who does the work, the strategy,
+            and the pitching. That is the difference between an agency line item
+            and an actual edge.
           </p>
            <Button variant="outline" href="/about" class="self-start">
             More about me
             <Icon name="arrow-right" size="sm" />
           </Button>
         </div>
-        <Card variant="elevated" padding="lg" class="h-full flex flex-col p-10" data-reveal="left" data-reveal-delay="1" data-reveal-ease="smooth">
-          <p class="font-display text-xl font-semibold text-foreground mb-8 text-center">How I work.</p>
-          <div class="grid grid-cols-2 gap-4 flex-1 auto-rows-fr">
-            <div class="bg-background-tertiary rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-3 border-t-2 border-brand-500/40 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-brand-500 cursor-default h-full">
-              <Icon name="target" class="w-10 h-10 text-brand-500" />
-              <p class="text-sm font-semibold text-foreground">Targeted outreach</p>
-            </div>
-            <div class="bg-background-tertiary rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-3 border-t-2 border-brand-500/40 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-brand-500 cursor-default h-full">
-              <Icon name="bar-chart" class="w-10 h-10 text-brand-500" />
-              <p class="text-sm font-semibold text-foreground">Measurable results</p>
-            </div>
-            <div class="bg-background-tertiary rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-3 border-t-2 border-brand-500/40 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-brand-500 cursor-default h-full">
-              <Icon name="globe" class="w-10 h-10 text-brand-500" />
-              <p class="text-sm font-semibold text-foreground">Global reach</p>
-            </div>
-            <div class="bg-background-tertiary rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-3 border-t-2 border-brand-500/40 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-brand-500 cursor-default h-full">
-              <Icon name="zap" class="w-10 h-10 text-brand-500" />
-              <p class="text-sm font-semibold text-foreground">AI-ready authority</p>
+        <div class="relative" data-reveal="left" data-reveal-delay="1" data-reveal-ease="smooth">
+          <div class="absolute -top-6 -left-6 w-24 h-24 rounded-2xl bg-brand-500/10 blur-2xl pointer-events-none" />
+          <div class="bg-card border border-card-border rounded-2xl p-10">
+            <p class="font-display text-2xl font-semibold text-foreground mb-10 text-center">How I work.</p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-background-tertiary rounded-xl p-6 flex flex-col items-center justify-center text-center gap-3 border-t-2 border-brand-500/40 transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-brand-500 cursor-default">
+                <Icon name="target" class="w-10 h-10 text-brand-500" />
+                <p class="text-sm font-semibold text-foreground">Targeted outreach</p>
+              </div>
+              <div class="bg-background-tertiary rounded-xl p-6 flex flex-col items-center justify-center text-center gap-3 border-t-2 border-brand-500/40 transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-brand-500 cursor-default">
+                <Icon name="bar-chart" class="w-10 h-10 text-brand-500" />
+                <p class="text-sm font-semibold text-foreground">Measurable results</p>
+              </div>
+              <div class="bg-background-tertiary rounded-xl p-6 flex flex-col items-center justify-center text-center gap-3 border-t-2 border-brand-500/40 transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-brand-500 cursor-default">
+                <Icon name="globe" class="w-10 h-10 text-brand-500" />
+                <p class="text-sm font-semibold text-foreground">Global reach</p>
+              </div>
+              <div class="bg-background-tertiary rounded-xl p-6 flex flex-col items-center justify-center text-center gap-3 border-t-2 border-brand-500/40 transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-brand-500 cursor-default">
+                <Icon name="zap" class="w-10 h-10 text-brand-500" />
+                <p class="text-sm font-semibold text-foreground">AI-ready authority</p>
+              </div>
             </div>
           </div>
-        </Card>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="relative z-10 py-24 md:py-32 bg-background border-t border-border">
+  <section class="relative z-10 py-28 md:py-40 bg-background">
     <div class="mx-auto max-w-3xl px-6 flex flex-col gap-10">
-      <div class="flex flex-col gap-5 text-center items-center" data-reveal>
+      <div class="flex flex-col gap-6 text-center items-center" data-reveal>
         <Badge variant="brand" pill>FAQ</Badge>
-        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-foreground">
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight text-foreground">
           Common questions
         </h2>
       </div>
@@ -353,11 +405,11 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   </section>
 
   <!-- Blog -->
-  <section class="relative z-10 py-24 md:py-32 bg-background-secondary border-t border-border">
+  <section class="relative z-10 py-28 md:py-40 bg-background-secondary">
     <div class="mx-auto max-w-6xl px-6 flex flex-col gap-10">
       <div class="flex flex-col items-center gap-6 text-center" data-reveal>
         <Badge variant="brand" pill>From the blog</Badge>
-        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-foreground">
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight text-foreground">
           Latest
         </h2>
       </div>
@@ -387,12 +439,13 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   </section>
 
   <!-- Final CTA -->
-  <section class="relative z-10 py-24 md:py-32 bg-background border-t border-border">
-    <div class="glitch:hidden mx-auto max-w-2xl px-6 text-center" data-reveal>
-      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-foreground mb-5 text-balance">
+  <section class="relative z-10 py-28 md:py-40 bg-background overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-500/[0.03] via-transparent to-brand-500/[0.03] pointer-events-none" />
+    <div class="glitch:hidden mx-auto max-w-3xl px-6 text-center" data-reveal>
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight text-foreground mb-6 text-balance">
         Your competitors are about to get quoted by the AI your buyers use.
       </h2>
-      <p class="text-lg text-foreground-muted mb-8 text-balance" style="line-height: 1.618">
+      <p class="text-lg text-foreground-muted mb-10 text-balance leading-relaxed" style="line-height: 1.618">
         Make sure you are in the answer.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -401,16 +454,16 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
           <Icon name="arrow-right" size="sm" />
         </Button>
       </div>
-      <p class="text-sm text-foreground-subtle mt-5">
+      <p class="text-sm text-foreground-subtle mt-6">
         No pitch deck, no pressure. Just a straight conversation about whether this is a fit.
       </p>
     </div>
 
     <LetterGlitchBand>
-      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-foreground mb-5 text-balance">
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight text-foreground mb-6 text-balance">
         Your competitors are about to get quoted by the AI your buyers use.
       </h2>
-      <p class="text-lg text-foreground-muted mb-8 text-balance" style="line-height: 1.618">
+      <p class="text-lg text-foreground-muted mb-10 text-balance leading-relaxed" style="line-height: 1.618">
         Make sure you are in the answer.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -419,7 +472,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
           <Icon name="arrow-right" size="sm" />
         </Button>
       </div>
-      <p class="text-sm text-foreground-subtle mt-5">
+      <p class="text-sm text-foreground-subtle mt-6">
         No pitch deck, no pressure. Just a straight conversation about whether this is a fit.
       </p>
     </LetterGlitchBand>
