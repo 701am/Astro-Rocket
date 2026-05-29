@@ -8,8 +8,6 @@ import Icon from '@/components/ui/primitives/Icon/Icon.astro';
 import BlogCard from '@/components/blog/BlogCard.astro';
 import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
 import Accordion from '@/components/ui/overlay/Accordion/Accordion.astro';
-import HeroGrid from '@/components/effects/HeroGrid.astro';
-import HeroBeam from '@/components/effects/HeroBeam.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft))
@@ -28,34 +26,30 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   includeProfessionalServiceSchema={true}
 >
   <!-- Hero -->
-  <Hero layout="centered" size="xl" class="relative isolate overflow-hidden hero-dark-gradient" showScrollIndicator fullHeight>
-    <HeroGrid />
-    <HeroBeam />
-    <div class="relative z-10">
-      <Badge slot="badge" variant="brand" pill pulse class="dark:text-brand-200 mb-6">Earned media for B2B and tech</Badge>
+  <Hero layout="centered" size="lg" class="bg-gradient-to-b from-brand-500/5 to-transparent dark:from-brand-500/10 dark:to-transparent">
+    <Badge slot="badge" variant="brand" pill pulse class="mb-6">Earned media for B2B and tech</Badge>
 
-      <h1 slot="title" class="font-display font-semibold leading-tight tracking-tight max-w-5xl mx-auto">
-        <span class="text-[clamp(1.5rem,3.5vw,2.25rem)] block text-foreground [-webkit-text-fill-color:currentColor]">When buyers and AI look for the best</span>
-        <span class="text-[clamp(1.5rem,3.5vw,2.25rem)] block text-foreground [-webkit-text-fill-color:currentColor]">in your category, do they find you?</span>
-      </h1>
+    <h1 slot="title" class="font-display font-semibold leading-tight tracking-tight max-w-5xl mx-auto">
+      <span class="block">When buyers and AI look for the best</span>
+      <span class="block">in your category, do they find you?</span>
+    </h1>
 
-      <p slot="description" class="max-w-3xl mx-auto text-balance text-lg leading-relaxed mt-6">
-        I get B2B and tech brands into the credible publications your customers trust
-        and the AI engines now quote. Earned coverage that builds authority, drives
-        qualified traffic, and shows up where ads cannot reach.
-      </p>
+    <p slot="description" class="max-w-3xl mx-auto text-balance text-lg leading-relaxed mt-6">
+      I get B2B and tech brands into the credible publications your customers trust
+      and the AI engines now quote. Earned coverage that builds authority, drives
+      qualified traffic, and shows up where ads cannot reach.
+    </p>
 
-     <Fragment slot="actions">
-        <Button size="lg" href="/contact">
-          Book a 15-minute fit call
-          <Icon name="arrow-right" size="sm" />
-        </Button>
-        <Button size="lg" variant="outline" href="#sprint">
-          See how the sprint works
-          <Icon name="arrow-down" size="sm" />
-        </Button>
-      </Fragment>
-    </div>
+    <Fragment slot="actions">
+      <Button size="lg" href="/contact">
+        Book a 15-minute fit call
+        <Icon name="arrow-right" size="sm" />
+      </Button>
+      <Button size="lg" variant="outline" href="#sprint">
+        See how the sprint works
+        <Icon name="arrow-down" size="sm" />
+      </Button>
+    </Fragment>
   </Hero>
 
   <!-- The Shift -->
