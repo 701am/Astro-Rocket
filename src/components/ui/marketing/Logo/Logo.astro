@@ -1,19 +1,20 @@
 ---
 /**
- * Logo Component — first-letter monogram badge
+ * Logo Component — first-letter monogram badge or full wordmark
  *
  * Renders a brand-coloured square badge with the first letter of the site
- * name, used in the navbar, footer, and blog post bylines.
+ * name (logomark), or the full "701am" wordmark SVG (full).
  */
 import { cn } from '@/lib/cn';
 import siteConfig from '@/config/site.config';
+import LogoWordmark from './LogoWordmark.astro';
 
 interface Props {
-  /** Size preset */
+  /** Size preset (logomark only) */
   size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   /** Force dark mode logo (for dark backgrounds) — no-op here, kept for API compat */
   forceDark?: boolean;
-  /** Use full logo instead of logomark — no-op here, kept for API compat */
+  /** Use full logo instead of logomark */
   variant?: 'logomark' | 'full';
   /** Additional CSS classes */
   class?: string;
@@ -23,6 +24,7 @@ interface Props {
 
 const {
   size = 'md',
+  variant = 'logomark',
   class: className,
   letter: letterProp,
 } = Astro.props;
@@ -37,18 +39,35 @@ const sizeClasses: Record<string, { box: string; text: string; radius: string }>
 
 const { box, text, radius } = sizeClasses[size] ?? sizeClasses.md;
 const letter = letterProp ?? siteConfig.name.charAt(0).toUpperCase();
+
+const wordmarkHeights: Record<string, number> = {
+  sm: 16,
+  md: 20,
+  lg: 26,
+  xl: 36,
+  '2xl': 52,
+};
 ---
 
-<span
-  class={cn(
-    'inline-flex items-center justify-center shrink-0',
-    'bg-brand-500 text-white',
-    'font-display font-bold leading-none select-none',
-    box, text, radius,
-    className
-  )}
-  aria-label={siteConfig.branding.logo.alt}
-  role="img"
->
-  {letter}
-</span>
+{
+  variant === 'full' ? (
+    <span class={cn('inline-flex items-center shrink-0', className)}>
+      <LogoWordmark height={wordmarkHeights[size]} />
+    </span>
+  ) : (
+    <span
+      class={cn(
+        'inline-flex items-center justify-center shrink-0',
+        'bg-brand-500 text-white',
+        'font-display font-bold leading-none select-none',
+        box, text, radius,
+        className
+      )}
+      aria-label={siteConfig.branding.logo.alt}
+      role="img"
+    >
+      {letter}
+    </span>
+  )
+}
+

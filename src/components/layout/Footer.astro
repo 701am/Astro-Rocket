@@ -88,7 +88,7 @@ const {
   socialLinks = [],
   showSocial = true,
   showCopyright = true,
-  copyright = '© {year} {siteName}. Designed by <a href="https://hansmartens.dev" class="underline hover:text-foreground transition-colors" target="_blank" rel="noopener noreferrer">Hans Martens</a>.',
+  copyright = '© {year} {siteName}.',
   legalLinks,
   hideLogo = false,
   tagline,
@@ -159,10 +159,7 @@ function getSocialIcon(platform: string): string {
               <slot name="logo" />
             ) : (
               <a href="/" class="flex items-center gap-2">
-                <Logo size="md" class="bg-brand-600" />
-                <span class="font-display text-base font-bold text-brand-600 dark:text-foreground">
-                  {siteConfig.name}
-                </span>
+                <Logo size="md" variant="full" />
               </a>
             )}
             {(hasTaglineSlot || tagline) && (

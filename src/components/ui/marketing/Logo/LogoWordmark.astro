@@ -1,0 +1,35 @@
+---
+interface Props {
+  class?: string;
+  height?: number;
+}
+
+const { class: className, height = 28 } = Astro.props;
+const aspectRatio = 220 / 64;
+const width = Math.round(height * aspectRatio);
+const fontSize = Math.round(height * 0.72);
+const amFontSize = Math.round(height * 0.53);
+const amX = Math.round(height * 2.11);
+const amY = Math.round(height * 0.625);
+const textY = Math.round(height * 0.72);
+---
+
+<svg
+  class={className}
+  width={width}
+  height={height}
+  viewBox="0 0 220 64"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="701am"
+>
+  <text x="0" y={textY}
+    font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+    font-weight="800" font-size={fontSize}
+    fill="currentColor" letter-spacing="-1">701</text>
+  <text x={amX} y={amY}
+    font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+    font-weight="400" font-size={amFontSize}
+    fill="#f97316">am</text>
+</svg>

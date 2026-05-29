@@ -162,13 +162,13 @@ export const defaultLang = 'en';
 export default {
   'nav.home': 'Home',
   'nav.about': 'About',
-  'hero.title': 'Ship faster with Astro Rocket',
+  'hero.title': 'Ship faster with 701am',
   'hero.subtitle': 'The modern Astro starter',
 } as const;
 
 // Usage in components
 import { t } from '@/i18n';
-const title = t('hero.title'); // "Ship faster..."`,
+const title = t('hero.title'); // "Ship faster with 701am"`,
     filename: 'src/i18n/config.ts',
   },
   content: {

@@ -120,30 +120,21 @@ export interface SiteConfig {
 }
 
 const siteConfig: SiteConfig = {
-  name: 'Astro Rocket',
+  name: '701am',
   description:
-    'Astro Rocket — A production-ready Astro 6 starter with 12 beautiful themes, 57+ components, built-in i18n, dark mode and a fast, modern foundation to build anything on.',
-  url: SITE_URL || 'https://astrorocket.dev',
+    'Earned media for B2B and tech brands — landing coverage in the publications and AI engines your buyers trust.',
+  url: SITE_URL || 'https://701am.com',
   ogImage: '/og-default.svg',
-  author: 'Hans Martens',
-  email: 'hello@hansmartens.dev',
+  author: 'David Krug',
+  email: 'hello@701am.com',
   address: {
     street: '',
-    city: 'Amsterdam',
+    city: '',
     state: '',
     zip: '',
-    country: 'the Netherlands',
+    country: '',
   },
-  socialLinks: [
-    'https://github.com/hansmartensdev',
-    'https://x.com/hansmartens_dev',
-    'https://www.linkedin.com',
-    'https://bsky.app/profile/hansmartensdev.bsky.social',
-  ],
-  twitter: {
-    site: 'https://x.com/hansmartens_dev',
-    creator: '@hansmartens_dev',
-  },
+  socialLinks: [],
   verification: {
     google: GOOGLE_SITE_VERIFICATION,
     bing: BING_SITE_VERIFICATION,
@@ -179,8 +170,8 @@ const siteConfig: SiteConfig = {
   i18n: i18nConfig,
   branding: {
     logo: {
-      alt: 'Astro Rocket',
-      imageUrl: '/favicon.svg',
+      alt: '701am — Earned Media & Authority Engineering',
+      imageUrl: '/logo.png',
     },
     favicon: {
       svg: '/favicon.svg',

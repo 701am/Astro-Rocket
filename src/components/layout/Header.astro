@@ -64,7 +64,6 @@ interface Props extends HTMLAttributes<'header'> {
   showThemeSelector?: boolean;
   showMobileMenu?: boolean;
   showActiveState?: boolean;
-  logoText?: string;
   hideLogo?: boolean;
   showLanguageSwitcher?: boolean;
   showSocialLinks?: boolean;
@@ -101,7 +100,6 @@ const {
   scrollProgressPosition = 'bottom',
   autoHide = true,
   invertOnReturn = true,
-  logoText,
   hideLogo = false,
   maxWidth = '6xl',
   class: className,
@@ -197,15 +195,7 @@ const buttonId = `${menuId}-button`;
           <slot name="logo" />
         ) : (
           <a href="/" class="flex items-center gap-2">
-            <Logo size={size === 'sm' ? 'md' : 'lg'} forceDark={isInvert} class="bg-brand-600" />
-            <span
-              class={cn(
-                'font-display text-xl font-bold tracking-tight',
-                isFloating ? 'hdr-logo-text' : (isInvert ? 'text-brand-600 dark:text-foreground lg:text-on-invert' : 'text-brand-600 dark:text-foreground')
-              )}
-            >
-              {logoText || siteConfig.name}
-            </span>
+            <Logo size={size === 'sm' ? 'md' : 'lg'} variant="full" />
           </a>
         ))
     }

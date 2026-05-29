@@ -8,7 +8,7 @@ import vercel from '@astrojs/vercel';
 import netlify from '@astrojs/netlify';
 import i18nConfig from './src/config/i18n.config.ts';
 
-const isNetlify = process.env.DEPLOY_TARGET === 'netlify';
+const isNetlify = process.env.DEPLOY_TARGET !== 'vercel';
 
 /**
  * Native Astro i18n is only wired up when the user opts in *and* has
