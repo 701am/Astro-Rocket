@@ -29,15 +29,17 @@ const projects = items.sort((a, b) => a.data.order - b.data.order);
 
     <h1 slot="title">Projects</h1>
 
-    <p slot="description">
-      Work I'm most proud of.
+    <p slot="description" class="max-w-2xl mx-auto">
+      For 20 years I've worked at the intersection of SEO, earned media, and project management — across higher education, edtech, startups, and finance. The throughline is simple: build things worth citing, then run the systems that turn that credibility into durable, compounding growth. Coverage and authority aren't a campaign you finish; they're an engine you operate.
     </p>
   </Hero>
 
   <!-- All projects -->
   {projects.length > 0 && (
-    <section class="py-[var(--space-section-md)] bg-background-secondary border-t border-border">
-      <div class="mx-auto max-w-6xl px-6 flex flex-col gap-8">
+    <section class="relative py-[var(--space-section-md)] bg-background-secondary overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-500/[0.02] via-transparent to-brand-500/[0.02] pointer-events-none" />
+      <div class="absolute inset-0 bg-grid opacity-[0.03] pointer-events-none" />
+      <div class="mx-auto max-w-6xl px-6 flex flex-col gap-8 relative">
 
         <div class="grid gap-6 md:grid-cols-2">
           {projects.map((project) => (
