@@ -7,11 +7,6 @@ interface Props {
 const { class: className, height = 28 } = Astro.props;
 const aspectRatio = 220 / 64;
 const width = Math.round(height * aspectRatio);
-const fontSize = Math.round(height * 0.72);
-const amFontSize = Math.round(height * 0.53);
-const amX = Math.round(height * 2.11);
-const amY = Math.round(height * 0.625);
-const textY = Math.round(height * 0.72);
 ---
 
 <svg
@@ -24,13 +19,13 @@ const textY = Math.round(height * 0.72);
   role="img"
   aria-label="701am"
 >
-  <text x="0" y={textY}
+  <text x="0" y="46"
     font-family="'Inter Variable', 'Inter', system-ui, sans-serif"
-    font-weight="700" font-size={fontSize}
+    font-weight="700" font-size="46"
     fill="currentColor" letter-spacing="-0.03em">701</text>
-  <text x={amX} y={amY}
+  <text x="76" y="40"
     font-family="'Inter Variable', 'Inter', system-ui, sans-serif"
-    font-weight="500" font-size={amFontSize}
+    font-weight="500" font-size="34"
     class="logo-am" letter-spacing="-0.01em">am</text>
 </svg>
 
