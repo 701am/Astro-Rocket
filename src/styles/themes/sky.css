@@ -1,9 +1,7 @@
 /* =============================================================================
-   Astro Rocket Theme - Sky
+   701am Theme - Sky
    =============================================================================
-   Modern sky blue (hue 222°). Clean, airy, and trustworthy — inspired by
-   Tailwind's sky palette. Sits between teal and blue, with a distinctly
-   open-sky feel.
+   Modern sky blue (hue 222°). Clean, airy, and trustworthy.
 
    Dark mode: near-black with a subtle sky-blue tint and cool glow.
    Light mode: clean neutral whites with sky blue as the single accent.
@@ -90,19 +88,19 @@ html[data-theme="sky"] {
   --border-invert-strong: oklch(29% 0.008 222);
 
   /* -------------------------------------------------------------------------
-     Typography
+     Typography — Playfair Display + Inter, golden ratio
      ------------------------------------------------------------------------- */
-  --theme-font-sans: 'Manrope Variable', 'Manrope', 'Manrope Fallback', ui-sans-serif, system-ui,
+  --theme-font-sans: 'Inter Variable', 'Inter', 'Inter Fallback', ui-sans-serif, system-ui,
     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
     Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
-  --theme-font-display: 'Outfit Variable', 'Outfit', 'Outfit Fallback', var(--theme-font-sans);
+  --theme-font-display: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
   --theme-font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace,
     SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
-  --theme-heading-weight: 700;
-  --theme-heading-tracking: -0.02em;
-  --theme-body-leading: 1.6;
+  --theme-heading-weight: 600;
+  --theme-heading-tracking: -0.01em;
+  --theme-body-leading: 1.618;
 
   /* -------------------------------------------------------------------------
      Shadows — sky-tinted

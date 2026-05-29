@@ -37,7 +37,7 @@ const regularPosts = regularPostsAll.slice(0, BLOG_POSTS_PER_PAGE);
 const topTags = collectTopTags(posts, TAG_CLOUD_LIMIT);
 ---
 
-<PageLayout title="Blog — 701am" description="Articles on web design, development, and the web." showScrollProgress eagerReveal>
+<PageLayout title="Blog - 701am" description="Articles on web design, development, and the web." showScrollProgress eagerReveal>
   <Hero layout="centered" size="sm" class="isolate" showHeroHalo>
     <Badge slot="badge" variant="brand" pill>
       <Icon name="book" size="sm" />
@@ -130,7 +130,7 @@ const topTags = collectTopTags(posts, TAG_CLOUD_LIMIT);
   <!-- Mobile: standard CTA, no LetterGlitch -->
   <CTA variant="default" size="md" maxWidth="lg" glow={false} data-reveal class:list={['glitch:hidden', featuredPosts.length > 0 && '!bg-background-secondary']}>
     <h2 slot="heading" class="!text-4xl">Follow along</h2>
-    <p slot="description" class="!text-lg text-balance">Stay in the loop — new articles, thoughts, and updates.</p>
+    <p slot="description" class="!text-lg text-balance">Stay in the loop - new articles, thoughts, and updates.</p>
 
     <div class="flex flex-wrap items-center justify-center gap-3">
       <a
@@ -165,7 +165,7 @@ const topTags = collectTopTags(posts, TAG_CLOUD_LIMIT);
   <section class:list={['hidden glitch:block relative z-10 py-[var(--space-section-md)]', featuredPosts.length > 0 ? 'bg-background-secondary' : 'bg-background']}>
     <LetterGlitchBand>
       <h2 class="font-display text-4xl font-bold text-foreground mb-4 text-balance">Follow along</h2>
-      <p class="text-lg text-foreground-muted mb-8 text-balance">Stay in the loop — new articles, thoughts, and updates.</p>
+      <p class="text-lg text-foreground-muted mb-8 text-balance">Stay in the loop - new articles, thoughts, and updates.</p>
 
       <div class="flex flex-wrap items-center justify-center gap-3">
         <a
